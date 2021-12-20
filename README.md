@@ -18,6 +18,7 @@ const handleRemove=(id)=>{
     }
 ```
 - Adding Todo
+
 "Todo.jsx"
 ```ts
     //Make a function that can add todos as you enter a new input
