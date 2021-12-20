@@ -27,7 +27,7 @@
     align-items: center;
 }
 
-/* TodoSearch */
+/* 'TodoSearch.jsx' */
 .todoContainer input{
     outline:none;
     width:200px;
@@ -61,6 +61,7 @@
 }
 
 /* 'TodoLists.jsx' */
+
 .todoContainer .todoList-container{
     display:flex;
     align-items: center;
@@ -70,7 +71,6 @@
     margin-bottom: 10px;
     border-radius: 3.6px;
     border:transparent;
-
     border-bottom: solid 4px rgba(255,118,20,1);
 }
 .todoList-container:nth-child(4n+1){
@@ -82,7 +82,11 @@
 .todoList-container:nth-child(4n+3){
     border-bottom-color: rgba(20,159,255,1);
 }
+.todoList-container .check{
+    text-decoration: line-through;
+}
 .todoList-container .todos{
+    cursor:pointer;
     font-size: 1rem;
 }
 .todos-icon{
