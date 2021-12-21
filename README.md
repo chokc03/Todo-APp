@@ -1,5 +1,8 @@
 # Todo App(first project)
 
+### Demo
+<img width="310" alt="image" src="https://user-images.githubusercontent.com/86751419/146941415-d3e41922-7dde-4d3d-80b1-9137c30128d6.png">
+website : 
 ### Purpose of the project
 Learning how states interacts with other components and how to pass in the props into another component.
 
