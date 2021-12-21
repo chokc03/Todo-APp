@@ -38,6 +38,7 @@ Learning how states interacts with other components and how to pass in the props
     4. Make 'TodoUpdate.jsx' similar with 'TodoSearch.jsx' except submitting function. In that function, you have to pass in the corresponding id into the updateTodo function(also the new input value).
 
 - Adding Todo
+
 "Todo.jsx"
 ```ts
     //Make a function that can add todos as you enter a new input
