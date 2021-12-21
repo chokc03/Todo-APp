@@ -105,6 +105,13 @@
 .todos-icon .star-on{
     color:#fdcc0d;
 }
+.todos-icon .editBtn{
+    color:#808282;
+    margin-left: 3px;
+}
+.todos-icon .editBtn:hover{
+    color:#1f45fc;
+}
 .todos-icon .removeBtn{
     color:#808282;
     margin-left:3px;

@@ -2,7 +2,7 @@
 Writer : Kyungchan Cho
 This file manipulates inputs need to added in the TodoList
 First written Date : 2021.12.20
-Finall edit Date : 2021.12.20
+Finall edit Date : 2021.12.21
 */
 
 import React, {useState} from 'react'
@@ -19,6 +19,7 @@ function TodoSearch({handleTodo}) {
             e.preventDefault();
             return;
         }
+
         else{
         //Pass in the input value to the new Todo
         handleTodo(input);

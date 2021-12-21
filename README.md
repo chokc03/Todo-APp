@@ -1,7 +1,7 @@
 # Todo App(first project)
 
 ### Purpose of the project
-Learning how states is connected with other components and usage of the props
+Learning how states interacts with other components and how to pass in the props into another component.
 
 ### Used Skills
 - React
@@ -9,14 +9,34 @@ Learning how states is connected with other components and usage of the props
 
 ### Advanced Feature
 #### React 
-- Remove function
-```ts
-const handleRemove=(id)=>{
-        //Use filter to remove the selcted id and maintain rest of the todos
-        const removeArr=todos.filter(todo=>todo.id!==id)
-        setTodos(removeArr);
-    }
-```
+
+- Todo editing function
+    1. Create two function in 'Todo.jsx' component
+        - handleEdit function :
+        ```ts
+            //Make the selected id's edit into True 
+        const handleEdit=(id)=>{
+            setTodos(todos.map(todo=>
+                todo.id===id?{...todo,edit:!todo.edit}:todo
+                ))
+        }
+        ```
+        - updateTodo function :
+        ```ts
+        //Update the text of the todo which has True in edit
+        //and refresh the edit into false
+        const updateTodo=(id,text)=>{
+            setTodos(todos.map(todo=>
+                todo.id===id?{...todo,text:text,edit:false}:todo,
+                ))
+        }
+        ```
+    2. Pass it into 'TodoLists.jsx'. The reason is because these two function needs a specific id from a todo.
+
+    3. Make a new component called 'TodoUpdate.jsx'. If the edit is true move on to the 'TodoUpdate.jsx', else stay with the TodoLists.
+
+    4. Make 'TodoUpdate.jsx' similar with 'TodoSearch.jsx' except submitting function. In that function, you have to pass in the corresponding id into the updateTodo function(also the new input value).
+
 - Adding Todo
 "Todo.jsx"
 ```ts
@@ -41,6 +61,8 @@ const handleRemove=(id)=>{
                     onClick={()=>handleRemove(id)}
                     />
 ```
+
+
 #### CSS
 - Add button moving up and down
 ```ts
@@ -71,5 +93,5 @@ const handleRemove=(id)=>{
 }
 ```
 ### Working On ...
-- Todo edit function
+- optimization
 
