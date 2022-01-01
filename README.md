@@ -5,7 +5,8 @@
 website : https://chokc03.github.io/Todo-App/
 
 ### Purpose of the project
-Learning how states interacts with other components and how to pass in the props into another component.
+- Learning how states interacts with other components and how to pass in the props into another component.
+- Learn how to optimize callback functions
 
 ### Used Skills
 - React
@@ -70,7 +71,19 @@ Learning how states interacts with other components and how to pass in the props
 - optimization (Use useCallback)
 
 Used useCallback for all the callback functions in order to prevent rendering an unnecessary function. Thus, functions are only called when their values changes.
-
+```ts
+const handleTodo=useCallback(ipnut=>{
+        const todo={
+            id:nextId.current,
+            text:ipnut,
+            edit:false
+        }
+        //Concat new todo to old Todos
+        setTodos(todos.concat(todo));
+        //Add 1 for the next todo's Id to make it unique
+        nextId.current +=1;
+    },[todos],);
+```
 #### CSS
 - Add button moving up and down
 ```ts
