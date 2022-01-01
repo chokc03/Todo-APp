@@ -5,7 +5,7 @@ First written Date : 2021.12.21
 Finall edit Date : 2021.12.21
 */
 
-import React,{useState} from 'react'
+import React,{useState,useCallback} from 'react'
 
 function TodoUpdate({todo,updateTodo}) {
     const[input,setInput] = useState('');
@@ -13,7 +13,7 @@ function TodoUpdate({todo,updateTodo}) {
     const handleChange =(e)=>{
         setInput(e.target.value);
     }
-    const submitUpdate=(e)=>{
+    const submitUpdate=useCallback((e)=>{
         if (input===''){
             e.preventDefault();
             return;
@@ -25,7 +25,7 @@ function TodoUpdate({todo,updateTodo}) {
         e.preventDefault();
         setInput('');
         }
-    }
+    },[updateTodo,input,id],);
     return (
         <div>
             <form onSubmit={submitUpdate}>

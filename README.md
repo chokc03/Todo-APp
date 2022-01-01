@@ -63,6 +63,9 @@ Learning how states interacts with other components and how to pass in the props
                     />
 ```
 
+- optimization (Use useCallback)
+
+Used useCallback for all the callback functions in order to prevent rendering an unnecessary function. Thus, functions are only called when their values changes.
 
 #### CSS
 - Add button moving up and down
@@ -93,6 +96,3 @@ Learning how states interacts with other components and how to pass in the props
     border-bottom-color: rgba(20,159,255,1);
 }
 ```
-### Working On ...
-- optimization
-

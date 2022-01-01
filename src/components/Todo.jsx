@@ -6,7 +6,7 @@ Finall edit Date : 2021.12.21
 */
 
 
-import React,{useState,useRef} from 'react';
+import React,{useState,useRef, useCallback} from 'react';
 import TodoLists from './TodoLists';
 import TodoSearch from './TodoSearch';
 
@@ -17,7 +17,7 @@ function Todo() {
     const [todos,setTodos] = useState([]);
     //Make a function that can add todos as you enter a new input
     //Get the input from 'TodoSearch.jsx' and add it into Todo object
-    const handleTodo=ipnut=>{
+    const handleTodo=useCallback(ipnut=>{
         const todo={
             id:nextId.current,
             text:ipnut,
@@ -27,19 +27,19 @@ function Todo() {
         setTodos(todos.concat(todo));
         //Add 1 for the next todo's Id to make it unique
         nextId.current +=1;
-    };
+    },[todos],);
     //Remove selected Todo List
-    const handleRemove=(id)=>{
+    const handleRemove=useCallback((id)=>{
         //Use filter to remove the selcted id and maintain rest of the todos
         const removeArr=todos.filter(todo=>todo.id!==id)
         setTodos(removeArr);
-    };
+    },[todos],);
     //Make the selected id's edit into True 
-    const handleEdit=(id)=>{
+    const handleEdit=useCallback((id)=>{
         setTodos(todos.map(todo=>
             todo.id===id?{...todo,edit:!todo.edit}:todo
             ))
-    }
+    },[todos]);
     //Update the text of the todo which has True in edit
     //and refresh the edit into false
     const updateTodo=(id,text)=>{

@@ -5,7 +5,7 @@ First written Date : 2021.12.20
 Finall edit Date : 2021.12.21
 */
 
-import React, {useState} from 'react'
+import React, {useState,useCallback} from 'react'
 
 
 function TodoSearch({handleTodo}) {
@@ -14,7 +14,7 @@ function TodoSearch({handleTodo}) {
         setInput(e.target.value);
     }
     //Add a new todo after submitted
-    const handleSubmit=(e)=>{
+    const handleSubmit=useCallback((e)=>{
         if (input===''){
             e.preventDefault();
             return;
@@ -28,7 +28,7 @@ function TodoSearch({handleTodo}) {
         //reset the input value
         setInput('');
         }
-    }
+    },[handleTodo, input]);
 
     return (
         <div>
